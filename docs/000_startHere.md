@@ -1,0 +1,2 @@
+﻿# Gilded Rose Kata Documentation
+
