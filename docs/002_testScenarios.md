@@ -13,7 +13,7 @@
     - Quality = Quality + 2
   - SellIn < 0 && Quality = 49
     - Quality = 50
-  - Quality >= 50
+  - Quality = 50
     - Quality = 50
   
 ## Conjured Items
@@ -39,8 +39,6 @@
 
 ## Limited Time Items
 - Update Quality
-  - SellIn >= 0
-    - Quality Increases
   - SellIn > 10
     - Quality = Quality + 1
   - SellIn <= 10 && SellIn > 5
