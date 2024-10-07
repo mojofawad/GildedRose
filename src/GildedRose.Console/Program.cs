@@ -47,7 +47,6 @@ namespace GildedRose.Console
 
         private static void UpdateQuality(Item item)
         {
-
             if (ItemIsBackstagePasses(item))
             {
                 UpdateBackstagePasses(item);
@@ -58,17 +57,19 @@ namespace GildedRose.Console
             }
             else
             {
-                if (ItemQualityDegradesOverTime(item))
-                {
-                    DecreaseItemQuality(item);
-                }
-                
-                DecreaseItemSellIn(item);
+                UpdateDegradingItem(item);
+            }
+        }
 
-                if (ItemSellInLessThanZero(item))
-                {
-                    DecreaseItemQuality(item);
-                }
+        private static void UpdateDegradingItem(Item item)
+        {
+            DecreaseItemQuality(item);
+                
+            DecreaseItemSellIn(item);
+
+            if (ItemSellInLessThanZero(item))
+            {
+                DecreaseItemQuality(item);
             }
         }
 
@@ -156,12 +157,6 @@ namespace GildedRose.Console
         private static bool ItemIsAgedBrie(Item item)
         {
             return item.Name == "Aged Brie";
-        }
-
-        private static bool ItemQualityDegradesOverTime(Item item)
-        {
-            return !ItemIsAgedBrie(item) &&
-                   !ItemIsBackstagePasses(item);
         }
 
         private static bool ItemQualityCanChange(Item item)
