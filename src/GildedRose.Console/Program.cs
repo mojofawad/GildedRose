@@ -28,21 +28,21 @@ namespace GildedRose.Console
 
                           };
 
-            app.UpdateQuality();
+            app.ProgressDay();
 
             System.Console.ReadKey();
 
         }
 
-        public void UpdateQuality()
+        public void ProgressDay()
         {
             foreach (var item in Items)
             {
-                UpdateItemQuality(item);
+                UpdateQuality(item);
             }
         }
 
-        private static void UpdateItemQuality(Item item)
+        private static void UpdateQuality(Item item)
         {
             if (!ItemIsLegendary(item))
             {

@@ -18,7 +18,7 @@ namespace GildedRose.Tests
             var app = new Program{Items = items};
 
             // Act
-            app.UpdateQuality();
+            app.ProgressDay();
 
             // Assert
             Assert.Equal(0, items[0].Quality);
@@ -39,7 +39,7 @@ namespace GildedRose.Tests
             var app = new Program{Items = items};
 
             // Act
-            app.UpdateQuality();
+            app.ProgressDay();
 
             // Assert
             Assert.Equal(0, items[0].Quality);
@@ -60,7 +60,7 @@ namespace GildedRose.Tests
             var app = new Program{Items = items};
 
             // Act
-            app.UpdateQuality();
+            app.ProgressDay();
 
             // Assert
             Assert.Equal(0, items[0].Quality);
@@ -75,7 +75,7 @@ namespace GildedRose.Tests
             var app = new Program{Items = items};
 
             // Act
-            app.UpdateQuality();
+            app.ProgressDay();
 
             // Assert
             Assert.Equal(0, items[0].Quality);

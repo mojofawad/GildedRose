@@ -14,7 +14,7 @@ namespace GildedRose.Tests
             var app = new Program{Items = items};
 
             // Act
-            app.UpdateQuality();
+            app.ProgressDay();
 
             // Assert
             Assert.Equal(58, items[0].SellIn);
