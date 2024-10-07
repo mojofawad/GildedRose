@@ -37,30 +37,31 @@ namespace GildedRose.Console
         {
             foreach (var item in Items)
             {
-                if (ItemQualityCanChange(item))
-                {
-                    UpdateQuality(item);
-                }
+                UpdateQuality(item);
             }
         }
 
         private static void UpdateQuality(Item item)
         {
-            if (ItemIsBackstagePasses(item))
+            if (IsLegendaryItem(item))
             {
-                UpdateBackstagePasses(item);
+                UpdateLegendaryItem(item);
             }
-            else if (ItemIsAgedBrie(item))
+            else if (IsLimitedTimeItem(item))
             {
-                UpdateAgedBrie(item);
+                UpdateLimitedTimeItemQuality(item);
+            }
+            else if (IsAgingItem(item))
+            {
+                UpdateAgingItemQuality(item);
             }
             else
             {
-                UpdateDegradingItem(item);
+                UpdateDegradingItemQuality(item);
             }
         }
 
-        private static void UpdateDegradingItem(Item item)
+        private static void UpdateDegradingItemQuality(Item item)
         {
             DecreaseItemQuality(item);
 
@@ -72,7 +73,7 @@ namespace GildedRose.Console
             }
         }
 
-        private static void UpdateAgedBrie(Item item)
+        private static void UpdateAgingItemQuality(Item item)
         {
             IncreaseItemQuality(item);
 
@@ -83,7 +84,7 @@ namespace GildedRose.Console
             }
         }
 
-        private static void UpdateBackstagePasses(Item item)
+        private static void UpdateLimitedTimeItemQuality(Item item)
         {
             IncreaseItemQuality(item);
 
@@ -105,6 +106,11 @@ namespace GildedRose.Console
             }
         }
 
+        private static void UpdateLegendaryItem(Item item)
+        {
+            // nothing changes
+        }
+
         private static void ZeroOutItemQuality(Item item)
         {
             item.Quality = item.Quality - item.Quality;
@@ -115,7 +121,7 @@ namespace GildedRose.Console
             return item.SellIn < 0;
         }
 
-        private static bool ItemIsBackstagePasses(Item item)
+        private static bool IsLimitedTimeItem(Item item)
         {
             return item.Name == "Backstage passes to a TAFKAL80ETC concert";
         }
@@ -153,17 +159,12 @@ namespace GildedRose.Console
             return item.Quality > minQuality;
         }
 
-        private static bool ItemIsAgedBrie(Item item)
+        private static bool IsAgingItem(Item item)
         {
             return item.Name == "Aged Brie";
         }
 
-        private static bool ItemQualityCanChange(Item item)
-        {
-            return (!ItemIsLegendary(item));
-        }
-
-        private static bool ItemIsLegendary(Item item)
+        private static bool IsLegendaryItem(Item item)
         {
             return item.Name == "Sulfuras, Hand of Ragnaros";
         }
