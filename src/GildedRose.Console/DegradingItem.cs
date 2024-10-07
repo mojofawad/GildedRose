@@ -23,7 +23,10 @@
 
         private void DecreaseItemQuality()
         {
-            if (ItemQualityGreaterThanMinimum()) _item.Quality = _item.Quality - 1;
+            if (ItemQualityGreaterThanMinimum())
+            {
+                _item.Quality = _item.Quality - 1;
+            }
         }
     }
 }

@@ -15,7 +15,10 @@
 
             UpdateItemSellIn();
 
-            if (ItemSellInLessThanZero()) UpdateExpiredItemQuality();
+            if (ItemSellInLessThanZero())
+            {
+                UpdateExpiredItemQuality();
+            }
         }
 
         protected abstract void UpdateItemQuality();
@@ -24,7 +27,10 @@
 
         protected void IncreaseItemQuality()
         {
-            if (ItemQualityLessThanMaximum()) _item.Quality = _item.Quality + 1;
+            if (ItemQualityLessThanMaximum())
+            {
+                _item.Quality = _item.Quality + 1;
+            }
         }
 
         private bool ItemQualityLessThanMaximum()

@@ -14,7 +14,10 @@
             {
                 IncreaseItemQuality();
 
-                if (_item.SellIn < 6) IncreaseItemQuality();
+                if (_item.SellIn < 6)
+                {
+                    IncreaseItemQuality();
+                }
             }
         }
 
@@ -25,7 +28,10 @@
 
         protected override void UpdateExpiredItemQuality()
         {
-            if (_item.SellIn < 0) ZeroOutItemQuality();
+            if (_item.SellIn < 0)
+            {
+                ZeroOutItemQuality();
+            }
         }
 
         private void ZeroOutItemQuality()
