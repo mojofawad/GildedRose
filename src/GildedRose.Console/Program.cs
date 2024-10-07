@@ -38,78 +38,66 @@ namespace GildedRose.Console
         {
             foreach (var item in Items)
             {
-                UpdateQuality(item);
+                if (ItemQualityCanChange(item))
+                {
+                    UpdateQuality(item);
+                }
             }
         }
 
         private static void UpdateQuality(Item item)
         {
-            if (ItemQualityCanChange(item))
+
+            if (ItemIsBackstagePasses(item))
+            {
+                UpdateBackstagePasses(item);
+            }
+            else
             {
                 if (ItemQualityDegradesOverTime(item))
                 {
-                    if (ItemQualityGreaterThanMinimum(item))
+                    DecreaseItemQuality(item);
+                }
+                else if (ItemIsAgedBrie(item))
+                {
+                    IncreaseItemQuality(item);
+                }
+                
+                DecreaseItemSellIn(item);
+
+                if (ItemSellInLessThanZero(item))
+                {
+                    if (ItemIsAgedBrie(item))
+                    {
+                        IncreaseItemQuality(item);
+                    }
+                    else if (ItemQualityCanChange(item))
                     {
                         DecreaseItemQuality(item);
                     }
                 }
-
-                else
-                {
-                    if (ItemQualityLessThanMaximum(item))
-                    {
-                        IncreaseItemQuality(item);
-
-                        if (ItemIsBackstagePasses(item))
-                        {
-                            if (item.SellIn < 11)
-                            {
-                                if (ItemQualityLessThanMaximum(item))
-                                {
-                                    IncreaseItemQuality(item);
-                                }
-                            }
-
-                            if (item.SellIn < 6)
-                            {
-                                if (ItemQualityLessThanMaximum(item))
-                                {
-                                    IncreaseItemQuality(item);
-                                }
-                            }
-                        }
-                    }
-                }
-                    
-                DecreaseItemSellIn(item);
             }
+        }
 
+        private static void UpdateBackstagePasses(Item item)
+        {
+            IncreaseItemQuality(item);
+
+            if (item.SellIn < 11)
+            {
+                IncreaseItemQuality(item);
+                    
+                if (item.SellIn < 6)
+                {
+                    IncreaseItemQuality(item);
+                }
+            }
+            
+            DecreaseItemSellIn(item);
+        
             if (ItemSellInLessThanZero(item))
             {
-                if (!ItemIsAgedBrie(item))
-                {
-                    if (!ItemIsBackstagePasses(item))
-                    {
-                        if (ItemQualityGreaterThanMinimum(item))
-                        {
-                            if (ItemQualityCanChange(item))
-                            {
-                                DecreaseItemQuality(item);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        ZeroOutItemQuality(item);
-                    }
-                }
-                else
-                {
-                    if (ItemQualityLessThanMaximum(item))
-                    {
-                        IncreaseItemQuality(item);
-                    }
-                }
+                ZeroOutItemQuality(item);
             }
         }
 
@@ -135,12 +123,18 @@ namespace GildedRose.Console
 
         private static void IncreaseItemQuality(Item item)
         {
-            item.Quality = item.Quality + 1;
+            if (ItemQualityLessThanMaximum(item))
+            {
+                item.Quality = item.Quality + 1;
+            }
         }
 
         private static void DecreaseItemQuality(Item item)
         {
-            item.Quality = item.Quality - 1;
+            if (ItemQualityGreaterThanMinimum(item))
+            {
+                item.Quality = item.Quality - 1;
+            }
         }
         
         private static bool ItemQualityLessThanMaximum(Item item)
