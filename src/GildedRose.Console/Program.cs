@@ -111,14 +111,9 @@ namespace GildedRose.Console
             // nothing changes
         }
 
-        private static void ZeroOutItemQuality(Item item)
+        private static bool IsAgingItem(Item item)
         {
-            item.Quality = item.Quality - item.Quality;
-        }
-
-        private static bool ItemSellInLessThanZero(Item item)
-        {
-            return item.SellIn < 0;
+            return item.Name == "Aged Brie";
         }
 
         private static bool IsLimitedTimeItem(Item item)
@@ -126,9 +121,9 @@ namespace GildedRose.Console
             return item.Name == "Backstage passes to a TAFKAL80ETC concert";
         }
 
-        private static void DecreaseItemSellIn(Item item)
+        private static bool IsLegendaryItem(Item item)
         {
-            item.SellIn = item.SellIn - 1;
+            return item.Name == "Sulfuras, Hand of Ragnaros";
         }
 
         private static void IncreaseItemQuality(Item item)
@@ -159,14 +154,19 @@ namespace GildedRose.Console
             return item.Quality > minQuality;
         }
 
-        private static bool IsAgingItem(Item item)
+        private static void ZeroOutItemQuality(Item item)
         {
-            return item.Name == "Aged Brie";
+            item.Quality = item.Quality - item.Quality;
         }
 
-        private static bool IsLegendaryItem(Item item)
+        private static bool ItemSellInLessThanZero(Item item)
         {
-            return item.Name == "Sulfuras, Hand of Ragnaros";
+            return item.SellIn < 0;
+        }
+
+        private static void DecreaseItemSellIn(Item item)
+        {
+            item.SellIn = item.SellIn - 1;
         }
     }
 
