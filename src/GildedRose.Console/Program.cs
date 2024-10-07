@@ -44,7 +44,7 @@ namespace GildedRose.Console
 
         private static void UpdateQuality(Item item)
         {
-            if (!ItemIsLegendary(item))
+            if (ItemQualityCanChange(item))
             {
                 if (ItemQualityDegradesOverTime(item))
                 {
@@ -86,13 +86,13 @@ namespace GildedRose.Console
 
             if (ItemSellInLessThanZero(item))
             {
-                if (ItemCanHaveQualityZero(item))
+                if (!ItemIsAgedBrie(item))
                 {
                     if (!ItemIsBackstagePasses(item))
                     {
                         if (ItemQualityGreaterThanMinimum(item))
                         {
-                            if (!ItemIsLegendary(item))
+                            if (ItemQualityCanChange(item))
                             {
                                 DecreaseItemQuality(item);
                             }
@@ -155,15 +155,20 @@ namespace GildedRose.Console
             return item.Quality > minQuality;
         }
 
-        private static bool ItemCanHaveQualityZero(Item item)
+        private static bool ItemIsAgedBrie(Item item)
         {
-            return item.Name != "Aged Brie";
+            return item.Name == "Aged Brie";
         }
 
         private static bool ItemQualityDegradesOverTime(Item item)
         {
-            return item.Name != "Aged Brie" &&
-                   item.Name != "Backstage passes to a TAFKAL80ETC concert";
+            return !ItemIsAgedBrie(item) &&
+                   !ItemIsBackstagePasses(item);
+        }
+
+        private static bool ItemQualityCanChange(Item item)
+        {
+            return (!ItemIsLegendary(item));
         }
 
         private static bool ItemIsLegendary(Item item)
