@@ -52,30 +52,34 @@ namespace GildedRose.Console
             {
                 UpdateBackstagePasses(item);
             }
+            else if (ItemIsAgedBrie(item))
+            {
+                UpdateAgedBrie(item);
+            }
             else
             {
                 if (ItemQualityDegradesOverTime(item))
                 {
                     DecreaseItemQuality(item);
                 }
-                else if (ItemIsAgedBrie(item))
-                {
-                    IncreaseItemQuality(item);
-                }
                 
                 DecreaseItemSellIn(item);
 
                 if (ItemSellInLessThanZero(item))
                 {
-                    if (ItemIsAgedBrie(item))
-                    {
-                        IncreaseItemQuality(item);
-                    }
-                    else if (ItemQualityCanChange(item))
-                    {
-                        DecreaseItemQuality(item);
-                    }
+                    DecreaseItemQuality(item);
                 }
+            }
+        }
+
+        private static void UpdateAgedBrie(Item item)
+        {
+            IncreaseItemQuality(item);
+                
+            DecreaseItemSellIn(item);
+            if (ItemSellInLessThanZero(item))
+            {
+                IncreaseItemQuality(item);
             }
         }
 
