@@ -1,6 +1,6 @@
 ﻿namespace GildedRose.Library.Enumerations
 {
-    internal enum InventoryItemType
+    public enum InventoryItemType
     {
         Appreciating,
         Degrading,

@@ -40,7 +40,7 @@ namespace GildedRose.Console
             foreach (var item in Items)
             {
                 var inventoryItem = InventoryItemFactory.CreateInventoryItem(item);
-                inventoryItem.UpdateQuality();
+                inventoryItem.UpdateItem();
             }
         }
     }

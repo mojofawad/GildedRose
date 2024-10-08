@@ -1,24 +1,11 @@
-﻿namespace GildedRose.Library.InventoryItems
+﻿using GildedRose.Library.InventoryItems.Interfaces;
+
+namespace GildedRose.Library.InventoryItems
 {
-    public class AppreciatingItem : InventoryItem
+    public class AppreciatingItem : ValuableItemBase
     {
         public AppreciatingItem(Item item) : base(item)
         {
-        }
-
-        protected override void UpdateItemQuality()
-        {
-            IncreaseItemQuality();
-        }
-
-        protected override void UpdateItemSellIn()
-        {
-            DecreaseItemSellIn();
-        }
-
-        protected override void UpdateExpiredItemQuality()
-        {
-            IncreaseItemQuality();
         }
     }
 }

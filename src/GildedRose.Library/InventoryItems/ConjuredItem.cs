@@ -1,27 +1,13 @@
-﻿namespace GildedRose.Library.InventoryItems
+﻿using GildedRose.Library.InventoryItems.Interfaces;
+
+namespace GildedRose.Library.InventoryItems
 {
-    public class ConjuredItem : DegradingItem
+    public class ConjuredItem : DegradingItemBase
     {
         public ConjuredItem(Item item) : base(item)
         {
-            
         }
 
-        protected override void UpdateItemQuality()
-        {
-            DecreaseItemQuality();
-            DecreaseItemQuality();
-        }
-
-        protected override void UpdateItemSellIn()
-        {
-            DecreaseItemSellIn();
-        }
-
-        protected override void UpdateExpiredItemQuality()
-        {
-            DecreaseItemQuality();
-            DecreaseItemQuality();
-        }
+        protected override int QualityDecreaseRate => 2;
     }
 }
