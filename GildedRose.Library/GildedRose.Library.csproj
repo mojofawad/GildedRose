@@ -39,7 +39,7 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="InventoryItems\AgingItem.cs" />
+        <Compile Include="InventoryItems\AppreciatingItem.cs" />
         <Compile Include="InventoryItems\ConjuredItem.cs" />
         <Compile Include="InventoryItems\DegradingItem.cs" />
         <Compile Include="InventoryItems\InventoryItem.cs" />

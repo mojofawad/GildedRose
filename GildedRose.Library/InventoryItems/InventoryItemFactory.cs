@@ -7,7 +7,7 @@
             switch (item.Name)
             {
                 case "Aged Brie":
-                    return new AgingItem(item);
+                    return new AppreciatingItem(item);
                 case "Backstage passes to a TAFKAL80ETC concert":
                     return new LimitedTimeItem(item);
                 case "Sulfuras, Hand of Ragnaros":

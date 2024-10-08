@@ -1,8 +1,8 @@
 ﻿namespace GildedRose.Library.InventoryItems
 {
-    public class AgingItem : InventoryItem
+    public class AppreciatingItem : InventoryItem
     {
-        public AgingItem(Item item) : base(item)
+        public AppreciatingItem(Item item) : base(item)
         {
         }
 
