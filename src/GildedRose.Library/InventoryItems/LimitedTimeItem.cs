@@ -4,20 +4,24 @@ namespace GildedRose.Library.InventoryItems
 {
     public class LimitedTimeItem : ValuableItemBase
     {
+        private int _qualityChangeModifier = 1;
+
         public LimitedTimeItem(Item item) : base(item)
         {
-            UpdateQualityIncreaseRate();
+            UpdateQualityChangeModifier();
         }
 
-        private void UpdateQualityIncreaseRate()
+        protected override int QualityChangeModifier => _qualityChangeModifier;
+
+        private void UpdateQualityChangeModifier()
         {
             if (_item.SellIn < 11)
             {
-                QualityIncreaseRate++;
+                _qualityChangeModifier++;
 
                 if (_item.SellIn < 6)
                 {
-                    QualityIncreaseRate++;
+                    _qualityChangeModifier++;
                 }
             }
         }

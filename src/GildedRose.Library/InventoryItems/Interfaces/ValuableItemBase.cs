@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GildedRose.Library.InventoryItems.Interfaces
+﻿namespace GildedRose.Library.InventoryItems.Interfaces
 {
     public abstract class ValuableItemBase : NonLegendaryItem
     {
@@ -10,26 +8,7 @@ namespace GildedRose.Library.InventoryItems.Interfaces
         {
         }
 
-        protected virtual int QualityIncreaseRate { get; set; } = 1;
-
-        public override void UpdateItemQuality()
-        {
-            IncreaseItemQuality();
-        }
-
-        public override void UpdateExpiredItemQuality()
-        {
-            IncreaseItemQuality();
-        }
-
-        private void IncreaseItemQuality()
-        {
-            if (ItemQualityLessThanMaximum())
-            {
-                // _item.Quality = _item.Quality + 1;
-                _item.Quality = Math.Min(_item.Quality + QualityIncreaseRate, MaximumItemQuality);
-            }
-        }
+        protected override int QualityChangeModifier => 1;
 
         private bool ItemQualityLessThanMaximum()
         {

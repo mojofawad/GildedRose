@@ -8,6 +8,6 @@ namespace GildedRose.Library.InventoryItems
         {
         }
 
-        protected override int QualityDecreaseRate => 2;
+        protected override int QualityChangeModifier => -2;
     }
 }
