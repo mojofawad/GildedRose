@@ -16,7 +16,7 @@ namespace GildedRose.Tests
                 new Item { Name = "SomeDegradingItem", SellIn = 1, Quality = 1 },
                 new Item { Name = "SomeDegradingItem", SellIn = 1, Quality = 2 }
             };
-            var app = new Program{Items = items};
+            var app = new Program { Items = items };
 
             // Act
             app.ProgressDay();
@@ -37,7 +37,7 @@ namespace GildedRose.Tests
                 new Item { Name = "SomeDegradingItem", SellIn = -1, Quality = 2 },
                 new Item { Name = "SomeDegradingItem", SellIn = -4, Quality = 4 }
             };
-            var app = new Program{Items = items};
+            var app = new Program { Items = items };
 
             // Act
             app.ProgressDay();
@@ -58,7 +58,7 @@ namespace GildedRose.Tests
                 new Item { Name = "SomeDegradingItem", SellIn = 0, Quality = 1 },
                 new Item { Name = "SomeDegradingItem", SellIn = -1, Quality = 1 }
             };
-            var app = new Program{Items = items};
+            var app = new Program { Items = items };
 
             // Act
             app.ProgressDay();
@@ -72,8 +72,8 @@ namespace GildedRose.Tests
         public void UpdateQuality_QualityEqualToZero_ReturnsQualityEqualToZero()
         {
             // Arrange
-            var items = new List<Item> { new Item { Name = "SomeDegradingItem", SellIn = 3, Quality = 0 }};
-            var app = new Program{Items = items};
+            var items = new List<Item> { new Item { Name = "SomeDegradingItem", SellIn = 3, Quality = 0 } };
+            var app = new Program { Items = items };
 
             // Act
             app.ProgressDay();

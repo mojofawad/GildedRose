@@ -16,7 +16,7 @@ namespace GildedRose.Tests
                 new Item { Name = "Conjured Mana Cake", SellIn = 1, Quality = 3 },
                 new Item { Name = "Conjured Mana Cake", SellIn = 1, Quality = 2 }
             };
-            var app = new Program{Items = items};
+            var app = new Program { Items = items };
 
             // Act
             app.ProgressDay();
@@ -37,7 +37,7 @@ namespace GildedRose.Tests
                 new Item { Name = "Conjured Mana Cake", SellIn = -1, Quality = 4 },
                 new Item { Name = "Conjured Mana Cake", SellIn = -4, Quality = 5 }
             };
-            var app = new Program{Items = items};
+            var app = new Program { Items = items };
 
             // Act
             app.ProgressDay();
@@ -58,7 +58,7 @@ namespace GildedRose.Tests
                 new Item { Name = "Conjured Mana Cake", SellIn = 0, Quality = 3 },
                 new Item { Name = "Conjured Mana Cake", SellIn = -1, Quality = 3 }
             };
-            var app = new Program{Items = items};
+            var app = new Program { Items = items };
 
             // Act
             app.ProgressDay();
@@ -72,8 +72,8 @@ namespace GildedRose.Tests
         public void UpdateQuality_QualityEqualToZero_ReturnsQualityEqualToZero()
         {
             // Arrange
-            var items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 0 }};
-            var app = new Program{Items = items};
+            var items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 0 } };
+            var app = new Program { Items = items };
 
             // Act
             app.ProgressDay();
@@ -83,4 +83,3 @@ namespace GildedRose.Tests
         }
     }
 }
-    

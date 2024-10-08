@@ -11,8 +11,8 @@ namespace GildedRose.Tests
         public void UpdateQuality_NameNotEqualToSulfurasHandOfRagnarosAtEndOfDay_ReturnsSellInMinusOne()
         {
             // Arrange
-            var items = new List<Item> { new Item { Name = "Duck Feather", SellIn = 59, Quality = 8 }};
-            var app = new Program{Items = items};
+            var items = new List<Item> { new Item { Name = "Duck Feather", SellIn = 59, Quality = 8 } };
+            var app = new Program { Items = items };
 
             // Act
             app.ProgressDay();
