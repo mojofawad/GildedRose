@@ -7,7 +7,5 @@ namespace GildedRose.Library.InventoryItems
         public DegradingItem(Item item) : base(item)
         {
         }
-
-        protected override int QualityChangeModifier => -1;
     }
 }

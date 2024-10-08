@@ -14,7 +14,7 @@ namespace GildedRose.Library.InventoryItems.Interfaces
             _item = item;
         }
 
-        protected virtual int QualityChangeModifier { get; set; } = 0;
+        protected abstract int QualityChangeModifier { get; }
 
         public InventoryItemType InventoryItemType { get; }
 
