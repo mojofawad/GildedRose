@@ -39,15 +39,20 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Enumerations\InventoryItemType.cs" />
-        <Compile Include="InventoryItems\AppreciatingItem.cs" />
-        <Compile Include="InventoryItems\ConjuredItem.cs" />
-        <Compile Include="InventoryItems\DegradingItem.cs" />
-        <Compile Include="InventoryItems\InventoryItem.cs" />
-        <Compile Include="InventoryItems\InventoryItemFactory.cs" />
-        <Compile Include="InventoryItems\LegendaryItem.cs" />
-        <Compile Include="InventoryItems\LimitedTimeItem.cs" />
-        <Compile Include="Item.cs" />
+        <Compile Include="Enumerations\InventoryItemType.cs"/>
+        <Compile Include="InventoryItems\AppreciatingItem.cs"/>
+        <Compile Include="InventoryItems\ConjuredItem.cs"/>
+        <Compile Include="InventoryItems\DegradingItem.cs"/>
+        <Compile Include="InventoryItems\Interfaces\DegradingItemBase.cs"/>
+        <Compile Include="InventoryItems\Interfaces\IInventoryItem.cs"/>
+        <Compile Include="InventoryItems\Interfaces\ILegendaryItem.cs"/>
+        <Compile Include="InventoryItems\Interfaces\INonLegendaryItem.cs"/>
+        <Compile Include="InventoryItems\Interfaces\NonLegendaryItem.cs"/>
+        <Compile Include="InventoryItems\Interfaces\ValuableItemBase.cs"/>
+        <Compile Include="InventoryItems\InventoryItemFactory.cs"/>
+        <Compile Include="InventoryItems\LegendaryItem.cs"/>
+        <Compile Include="InventoryItems\LimitedTimeItem.cs"/>
+        <Compile Include="Item.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>

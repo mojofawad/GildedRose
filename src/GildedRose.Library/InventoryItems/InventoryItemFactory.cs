@@ -1,11 +1,12 @@
 ﻿using System;
 using GildedRose.Library.Enumerations;
+using GildedRose.Library.InventoryItems.Interfaces;
 
 namespace GildedRose.Library.InventoryItems
 {
     public static class InventoryItemFactory
     {
-        public static InventoryItem CreateInventoryItem(Item item)
+        public static IInventoryItem CreateInventoryItem(Item item)
         {
             var itemType = GetItemType(item);
             switch (itemType)

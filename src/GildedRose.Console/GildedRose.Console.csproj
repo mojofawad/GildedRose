@@ -49,10 +49,6 @@
         <None Include="packages.config"/>
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\..\GildedRose.Library\GildedRose.Library.csproj">
-        <Project>{583f2f7a-173e-43e7-a9e4-d02aa532e715}</Project>
-        <Name>GildedRose.Library</Name>
-      </ProjectReference>
       <ProjectReference Include="..\GildedRose.Library\GildedRose.Library.csproj">
         <Project>{583f2f7a-173e-43e7-a9e4-d02aa532e715}</Project>
         <Name>GildedRose.Library</Name>

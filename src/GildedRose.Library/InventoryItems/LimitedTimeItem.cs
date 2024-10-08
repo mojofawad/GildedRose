@@ -1,32 +1,28 @@
-﻿namespace GildedRose.Library.InventoryItems
+﻿using GildedRose.Library.InventoryItems.Interfaces;
+
+namespace GildedRose.Library.InventoryItems
 {
-    public class LimitedTimeItem : InventoryItem
+    public class LimitedTimeItem : ValuableItemBase
     {
         public LimitedTimeItem(Item item) : base(item)
         {
+            UpdateQualityIncreaseRate();
         }
 
-        protected override void UpdateItemQuality()
+        private void UpdateQualityIncreaseRate()
         {
-            IncreaseItemQuality();
-
             if (_item.SellIn < 11)
             {
-                IncreaseItemQuality();
+                QualityIncreaseRate++;
 
                 if (_item.SellIn < 6)
                 {
-                    IncreaseItemQuality();
+                    QualityIncreaseRate++;
                 }
             }
         }
 
-        protected override void UpdateItemSellIn()
-        {
-            DecreaseItemSellIn();
-        }
-
-        protected override void UpdateExpiredItemQuality()
+        public override void UpdateExpiredItemQuality()
         {
             if (_item.SellIn < 0)
             {

@@ -1,22 +1,18 @@
-﻿namespace GildedRose.Library.InventoryItems
+﻿using GildedRose.Library.Enumerations;
+using GildedRose.Library.InventoryItems.Interfaces;
+
+namespace GildedRose.Library.InventoryItems
 {
-    public class LegendaryItem : InventoryItem
+    public class LegendaryItem : ILegendaryItem
     {
-        public LegendaryItem(Item item) : base(item)
+        public LegendaryItem(Item item)
         {
         }
 
-        protected override void UpdateItemQuality()
-        {
-            // nothing changes
-        }
+        public InventoryItemType InventoryItemType => InventoryItemType.Legendary;
+        public string LegendaryItemLore => "Legendary items never change";
 
-        protected override void UpdateItemSellIn()
-        {
-            // nothing changes
-        }
-
-        protected override void UpdateExpiredItemQuality()
+        public void UpdateItem()
         {
             // nothing changes
         }
