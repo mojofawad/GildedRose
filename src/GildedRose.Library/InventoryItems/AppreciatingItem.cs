@@ -7,5 +7,7 @@ namespace GildedRose.Library.InventoryItems
         public AppreciatingItem(Item item) : base(item)
         {
         }
+
+        protected override int QualityChangeModifier => 1;
     }
 }
