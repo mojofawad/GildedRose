@@ -21,7 +21,7 @@
             DecreaseItemQuality();
         }
 
-        private void DecreaseItemQuality()
+        private protected void DecreaseItemQuality()
         {
             if (ItemQualityGreaterThanMinimum())
             {
