@@ -12,6 +12,8 @@
                     return new LimitedTimeItem(item);
                 case "Sulfuras, Hand of Ragnaros":
                     return new LegendaryItem(item);
+                case "Conjured Mana Cake":
+                    return new ConjuredItem(item);
                 default:
                     return new DegradingItem(item);
             }

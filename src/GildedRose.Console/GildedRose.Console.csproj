@@ -42,6 +42,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="AgingItem.cs"/>
+        <Compile Include="ConjuredItem.cs" />
         <Compile Include="DegradingItem.cs"/>
         <Compile Include="InventoryItem.cs"/>
         <Compile Include="InventoryItemFactory.cs"/>
