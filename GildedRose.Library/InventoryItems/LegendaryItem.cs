@@ -1,24 +1,24 @@
-﻿namespace GildedRose.Console
+﻿namespace GildedRose.Library.InventoryItems
 {
-    public class ConjuredItem : InventoryItem
+    public class LegendaryItem : InventoryItem
     {
-        public ConjuredItem(Item item) : base(item)
+        public LegendaryItem(Item item) : base(item)
         {
-            
         }
 
         protected override void UpdateItemQuality()
         {
-            
+            // nothing changes
         }
 
         protected override void UpdateItemSellIn()
         {
-            
+            // nothing changes
         }
 
         protected override void UpdateExpiredItemQuality()
         {
+            // nothing changes
         }
     }
 }

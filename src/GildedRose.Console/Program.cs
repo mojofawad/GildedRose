@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using GildedRose.Library;
+using GildedRose.Library.InventoryItems;
 
 namespace GildedRose.Console
 {

@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{F2E879A9-7F1C-4C34-AB0D-2662F9815046}</ProjectGuid>
-        <OutputType>Exe</OutputType>
+        <ProjectGuid>{583F2F7A-173E-43E7-A9E4-D02AA532E715}</ProjectGuid>
+        <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>GildedRose.Console</RootNamespace>
-        <AssemblyName>GildedRose.Console</AssemblyName>
+        <RootNamespace>GildedRose.Library</RootNamespace>
+        <AssemblyName>GildedRose.Library</AssemblyName>
         <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -34,25 +35,19 @@
     <ItemGroup>
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
-        <Reference Include="System.Xml.Linq"/>
-        <Reference Include="System.Data.DataSetExtensions"/>
-        <Reference Include="Microsoft.CSharp"/>
         <Reference Include="System.Data"/>
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Program.cs"/>
+        <Compile Include="InventoryItems\AgingItem.cs" />
+        <Compile Include="InventoryItems\ConjuredItem.cs" />
+        <Compile Include="InventoryItems\DegradingItem.cs" />
+        <Compile Include="InventoryItems\InventoryItem.cs" />
+        <Compile Include="InventoryItems\InventoryItemFactory.cs" />
+        <Compile Include="InventoryItems\LegendaryItem.cs" />
+        <Compile Include="InventoryItems\LimitedTimeItem.cs" />
+        <Compile Include="Item.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
-    </ItemGroup>
-    <ItemGroup>
-        <None Include="App.config"/>
-        <None Include="packages.config"/>
-    </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\..\GildedRose.Library\GildedRose.Library.csproj">
-        <Project>{583f2f7a-173e-43e7-a9e4-d02aa532e715}</Project>
-        <Name>GildedRose.Library</Name>
-      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -62,4 +57,5 @@
     <Target Name="AfterBuild">
     </Target>
     -->
+
 </Project>

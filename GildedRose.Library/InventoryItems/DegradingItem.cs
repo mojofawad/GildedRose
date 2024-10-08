@@ -1,4 +1,4 @@
-﻿namespace GildedRose.Console
+﻿namespace GildedRose.Library.InventoryItems
 {
     public class DegradingItem : InventoryItem
     {
